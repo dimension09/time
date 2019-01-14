@@ -1,33 +1,33 @@
 window.onload = () => {
     'use srtict'
-    // var scene = document.getElementById('scene');
-    // var parallaxInstance = new Parallax(scene);
-    // var timeback = document.querySelectorAll('#timeback');
-    //var currenttime = document.querySelectorAll('#curenttime');
-    // document.querySelector('#currenttime').value = 'hello';
-    // /currenttime.innerHTML = new Date(3600 * 24 * 1000);
-      
-    
-    
 
-    setInterval(() => {
+    function App () {
+
         var d = new Date();
-        var currentTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-        // var hour = ` ${d.getHours()} `;
-        var currentColor = `${d.getHours()}` + `${d.getMinutes()}` + `${d.getSeconds()}`;
-        // var hourstring = toString(hour);
-        console.log(currentColor);
+        var hours = d.getHours().toString();
+        var minutes = d.getMinutes().toString();
+        var seconds = d.getSeconds().toString();
+
+        if(hours.length < 2) hours = '0' + hours;
+        if(minutes.length < 2) minutes = '0' + minutes;
+        if(seconds.length < 2) seconds = '0' + seconds;
+        
+        var currentTime = hours + ":" + minutes + ":" + seconds;
+        var currentColor = hours + minutes + seconds;
 
         document.getElementById('currenttime').innerHTML = currentTime;
         document.getElementById('timeback').style.backgroundColor = `#${currentColor}`;
         document.getElementById('currentcolor').innerHTML = `#${currentColor}`;
+        
+    }
 
+    App();
+
+    setInterval(() => {
+
+        App();
 
     }, 1000);
     
-
-    console.log('hello');
-
 }
-    
     
