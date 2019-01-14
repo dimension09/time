@@ -1,0 +1,15 @@
+{
+  "name": "pack.ru",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Yuriy Klimovych <web-west@i.ua>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "reset-css": "^2.2.1"
+  },
+  "devDependencies": {
+  }
+}
